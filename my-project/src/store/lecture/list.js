@@ -13,12 +13,10 @@ const actions = {
     async getLectures({commit}){
         let config = {
             headers:{'Access-Control-Allow-Origin':'*'}
-        };
+        }
         axios.get(state.context, config)
             .then((data)=>{
                 commit('GETLECTURES', data.data.data.content)
-                console.log(data.data.data.content)
-                console.log(state.content)
             })
             .catch(()=>{
                 alert('잘못된 요청입니다.')

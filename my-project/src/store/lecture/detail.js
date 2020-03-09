@@ -11,7 +11,7 @@ const actions = {
     async getDetail({commit}){
         let config = {
             headers:{'Access-Control-Allow-Origin':'*'}
-        };
+        }
         axios.get(state.context, config)
             .then((data)=>{
                 commit('GETDETAIL', data.data.data)
